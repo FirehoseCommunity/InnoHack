@@ -12,4 +12,4 @@ Find it on [Heroku](https://intergalacticbattleship.herokuapp.com/)
 ## Developer Notes:
 * The journey begins
 
-<small>20160617</small>
+<sub>20160617</sub>
