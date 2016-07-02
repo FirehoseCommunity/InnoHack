@@ -27,8 +27,12 @@
             <li><%= link_to 'Do some stuff', '#' %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-             <li><%= link_to "Sign Up",  new_user_registration_path %></li>
-              <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to 'Sign out',destroy_user_session_path, method: :delete %>
+          <% else %>
+            <li><%= link_to "Sign Up",  new_user_registration_path %></li>
+            <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <% end %>   
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
