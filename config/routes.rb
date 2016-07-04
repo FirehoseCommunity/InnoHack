@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'static_pages/index'
   root 'static_pages#index'
-  resources :shares, only: [:index, :new, :create]
+  resources :shares, only: [:index, :new, :create, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

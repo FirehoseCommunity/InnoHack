@@ -22,6 +22,20 @@ RSpec.describe SharesController, type: :controller do
 
 			share = Share.last
 			expect(share.body). to eq("Hack Attack!")
+			expect(response).to have_http_status(:success)
 		end
 	end
+
+	describe "shares#show action" do
+		it "should successfully show a share" do
+			share = FactoryGirl.create(:share)
+			get :show, id: share.id
+		end
+
+		it "should return a 404 error if the gram is not found" do
+			get :show, id: 'NOT FOUND'
+			expect(response).to have_http_status(:not_found)
+		end
+	end
+
 end

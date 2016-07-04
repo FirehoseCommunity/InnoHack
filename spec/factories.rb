@@ -7,4 +7,10 @@ FactoryGirl.define do
 		password_confirmation "secretPassword"
 
 	end
+
+  factory :share do 
+    body "Hack Attack!"
+    association :user
+  end
+
 end
