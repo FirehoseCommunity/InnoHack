@@ -12,6 +12,10 @@ class SharesController < ApplicationController
 		redirect_to shares_path
 	end
 
+	def show
+		@share = Share.find(params[:id])
+	end
+
 	private
 
 	def share_params
