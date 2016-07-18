@@ -16,6 +16,12 @@ class SharesController < ApplicationController
 		@share = Share.find(params[:id])
 	end
 
+	def upvote
+		@share = Share.find(params[:id])
+		@share.votes.create
+		redirect_to shares_path
+	end
+
 	private
 
 	def share_params
