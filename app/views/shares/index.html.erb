@@ -9,8 +9,6 @@
       <%= share.body %>
     </p>
     <%= pluralize(share.votes.count, "votes") %>
-    <%= button_to '+1', upvote_share_path(share), method: :post %><br />
-
     
    </div>
   <% end %>
