@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   # Gravtastic for gravatar support: https://github.com/chrislloyd/gravtastic
   include Gravtastic
   gravtastic
+
+  has_many :shares
 end
