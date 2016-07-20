@@ -63,28 +63,28 @@ RSpec.describe SharesController, type: :controller do
 
 	describe "shares#edit" do
 		it "shouldn't let a user who did not create the share edit a share" do
-     share = FactoryGirl.create(:share)
-     user = FactoryGirl.create(:user)
-     sign_in user
+    	share = FactoryGirl.create(:share)
+   		user = FactoryGirl.create(:user)
+    	sign_in user
 
-     get :edit, id: share.id
-     expect(response).to have_http_status(:forbidden)     
+    	get :edit, id: share.id
+    	expect(response).to have_http_status(:forbidden)     
 		end
 
 		it "shouldn't let unauthenticated users edit a share" do
-     share = FactoryGirl.create(:share)
-     get :edit, id: share.id
-     expect(response).to redirect_to new_user_session_path
+    	share = FactoryGirl.create(:share)
+    	get :edit, id: share.id
+    	expect(response).to redirect_to new_user_session_path
 		end
 
 		it "should successfully show the edit form if the share is found" do
-     share = FactoryGirl.create(:share)
+    	share = FactoryGirl.create(:share)
      sign_in share.user
      get :edit, id: share.id
      expect(response).to have_http_status(:success)
 	  end
 
-	  it "should return a 404 error message if the share is not found" do
+		it "should return a 404 error message if the share is not found" do
      user = FactoryGirl.create(:user)
      sign_in user
      get :edit, id: 'NOT FOUND'
