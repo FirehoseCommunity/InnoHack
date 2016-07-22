@@ -110,7 +110,8 @@ RSpec.describe SharesController, type: :controller do
    it "should allow users to successfully update shares" do
     share = FactoryGirl.create(:share, body: "Initial Value")
     sign_in share.user
-    patch :update, id: share.id, share: {body: "Updated"expect(response).to redirect_to shares_path
+    patch :update, id: share.id, share: {body: "Updated"}
+    expect(response).to redirect_to shares_path
    end
 
    it "should have http 404 error if the share cannot be found" do
