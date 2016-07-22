@@ -110,7 +110,8 @@ RSpec.describe SharesController, type: :controller do
    it "should allow users to successfully update shares" do
     share = FactoryGirl.create(:share, body: "Initial Value")
     sign_in share.user
-    patch :update, id: share.id, share: {body: "Updated"expect(response).to redirect_to shares_path
+    patch :update, id: share.id, share: {body: "Updated"}
+    expect(response).to redirect_to shares_path
    end
 
    it "should have http 404 error if the share cannot be found" do
@@ -121,8 +122,9 @@ RSpec.describe SharesController, type: :controller do
    end
 
    it "should render the edit form with an http status of unprocessable_entity" do 
-    share = FactoryGirl.create(:share, body: "Initial Value"
-    sign_in share.use
+    share = FactoryGirl.create(:share, body: "Initial Value")
+    sign_in share.user
+
     patch :update, id: share.id, share: {body: '' }
     expect(response).to have_http_status(:unprocessable_entity)
    end
