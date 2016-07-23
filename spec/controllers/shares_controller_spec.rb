@@ -123,7 +123,7 @@ RSpec.describe SharesController, type: :controller do
 
    it "should render the edit form with an http status of unprocessable_entity" do 
     share = FactoryGirl.create(:share, body: "Initial Value")
-    sign_in share.use
+    sign_in share.user
     patch :update, id: share.id, share: {body: '' }
     expect(response).to have_http_status(:unprocessable_entity)
    end
