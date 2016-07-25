@@ -21,6 +21,7 @@ class SharesController < ApplicationController
   def show
    @share = Share.find_by_id(params[:id])
    return render_not_found if @share.blank?
+   @comment = Comment.new
   end
 
   def edit

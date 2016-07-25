@@ -13,4 +13,10 @@ FactoryGirl.define do
     association :user
   end
 
+  factory :comment do
+    body "Wow!"
+    association :share
+    association :user
+  end
+
 end
