@@ -1,0 +1,10 @@
+<h1>Hashtags</h1>
+<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+  <div class="booyah-box post">
+    <ul>
+    <% @hashtags.each do |hashtag| %>
+        <li><%= link_to hashtag.name, hashtag_path(hashtag.name) %></li>
+    <% end -%>
+    </ul>
+  </div>
+</div>
