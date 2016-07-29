@@ -1,8 +1,8 @@
 # InnoHack
 
-A _somebody edit this and describe the app here_ created by [Firehose Project](http://thefirehoseproject.com) students.
+A social network for developers to share code snippets by [Firehose Project](http://thefirehoseproject.com) students.
 
-future home of CI status badge
+[CI status badge]
 
 Find it on [Heroku](https://innohack.herokuapp.com/)
 

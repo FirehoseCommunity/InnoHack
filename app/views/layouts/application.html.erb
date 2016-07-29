@@ -3,13 +3,27 @@
 <head>
   <title>InnoHack</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <%= render 'layouts/navigation' %>
 
-  <%= render 'layouts/error' %>
+  <!-- Added toastr, if you prefer regular errors. You can add the _error partial -->
+  <!-- render 'layouts/error' -->
+
+  <% flash.each do |name, msg| %>
+    <%= javascript_tag do %>
+      <% if notice.present? %>
+        toastr.info("<%= notice %>")
+      <% end %>
+      <% if alert.present? %>
+        toastr.warning("<%= alert %>")
+      <% end %>
+    <% end %>
+  <% end %>
 
   <div class="container">
     <%= yield %>
