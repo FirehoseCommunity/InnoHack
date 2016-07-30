@@ -1,5 +1,6 @@
 class SharesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_share, only: [:show, :edit, :update, :destroy, :upvote]
 
   def index
    @shares = Share.all
@@ -20,20 +21,16 @@ class SharesController < ApplicationController
   end
 
   def show
-   @share = Share.find_by_id(params[:id])
    return render_not_found if @share.blank?
    @comment = Comment.new
   end
 
   def edit
-   @share = Share.find_by_id(params[:id])
-
    return render_not_found if @share.blank?
    return render_not_found(:forbidden) if @share.user != current_user
   end
 
   def update
-   @share = Share.find_by_id(params[:id])
    return render_not_found if @share.blank?
    return render_not_found(:forbidden) if @share.user != current_user
 
@@ -47,7 +44,6 @@ class SharesController < ApplicationController
   end
 
   def destroy
-   @share = Share.find_by_id(params[:id])
    return render_not_found if @share.blank?
    return render_not_found(:forbidden) if @share.user != current_user
    @share.destroy
@@ -56,7 +52,6 @@ class SharesController < ApplicationController
   end
 
   def upvote
-   @share = Share.find(params[:id])
    @share.votes.create
    flash[:notice] = "Code Share Upvoted!."
    redirect_to shares_path
@@ -66,6 +61,10 @@ class SharesController < ApplicationController
 
   def share_params
     params.require(:share).permit(:body, :title)
+  end
+
+  def set_share
+    @share = Share.find(params[:id])
   end
 
   def require_creator
