@@ -2,7 +2,7 @@ class SharesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 	
   def index
-   @shares = Share.all
+   @shares = Share.newest
   end
 
   def new
