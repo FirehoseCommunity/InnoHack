@@ -6,7 +6,7 @@
   <%= pluralize(@share.votes.count, "votes") %>
   <%= button_to '+1', upvote_share_path(@share), method: :post %><br />
   <div class="btn btn-warning pull-right"><%= link_to 'Edit', edit_share_path(@share) %></div>
-  <div class="btn btn-warning pull-right"><%= link_to 'Delete', share_path(@share), method: :delete, data: {confirm: 'Are you sure?git '} %></div>
+  <div class="btn btn-warning pull-right"><%= link_to 'Delete', share_path(@share), method: :delete, data: {confirm: 'Are you sure?'} %></div>
 
   <div class="clear"></div>
   <br />
