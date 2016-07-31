@@ -6,7 +6,7 @@
     <div class="handle"><%= current_user.name %></div>
     <%= link_to share.title, share_path(share) %>
     <p>
-      <%= linkify_hashtags(share.body) %>
+      <%= linkify_hashtags.markdown(share.body) %>
     </p>
     <%= pluralize(share.votes.count, "votes") %>
     
