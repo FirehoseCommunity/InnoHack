@@ -25,11 +25,11 @@ class CommentsController < ApplicationController
     end
 
     def set_comment
-      @comment = Comment.find(params[:id])
+      @comment = Comment.find_by_id(params[:id])
     end
 
     def require_creator
-      access_denied unless user_signed_in? and (current_user == @comment.user)
+      access_denied unless user_signed_in? && (current_user == @comment.user)
     end
 
 end

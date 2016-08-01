@@ -12,7 +12,6 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
-
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
