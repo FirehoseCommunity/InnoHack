@@ -38,6 +38,8 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'devise'
 
+gem 'socialization'
+
 # Adding gravatar support https://github.com/chrislloyd/gravtastic
 gem 'gravtastic'
 

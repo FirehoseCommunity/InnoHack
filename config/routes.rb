@@ -11,6 +11,11 @@ Rails.application.routes.draw do
     end
     resources :comments, only: :create
   end
+  resources :users do
+    member do
+      post :follow
+    end
+  end
   resources :users, only: [:show]
 
 
