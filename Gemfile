@@ -66,3 +66,5 @@ group :test do
 end
 
 gem 'simple_hashtag'
+
+gem 'redcarpet'
