@@ -1,8 +1,18 @@
+<% content_for :head do %>
+  <%= tag :meta, property: "fb:app_id", content: ENV['FACEBOOK_APP_ID'] %>
+  <%= tag :meta, property: "og:site_name", content: "InnoHack" %>
+  <%= tag :meta, property: "og:type", content: "innohack:share" %>
+  <%= tag :meta, property: "og:title", content: @share.title %>
+  <%= tag :meta, property: "og:description", content: @share.body %>
+  <%= tag :meta, property: "og:image", content: "app/assets/images/1470288007_Html.png" %>
+<% end %>
+
+
 <div class="booyah-box col-xs-10 col-xs-offset-1">
   <h1><%= @share.title %></h1><br />
   <i><%= current_user.name %></i><br /><br />
 
-  <p><%= linkify_hashtags(markdwon(@share.body)) %></p><br />
+  <p><%= linkify_hashtags(markdown(@share.body)) %></p><br />
   <%= pluralize(@share.votes.count, "votes") %>
   <%= button_to '+1', upvote_share_path(@share), method: :post %><br />
   <div class="btn btn-warning pull-right"><%= link_to 'Edit', edit_share_path(@share) %></div>

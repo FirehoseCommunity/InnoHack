@@ -43,6 +43,8 @@ gem 'socialization'
 # Adding gravatar support https://github.com/chrislloyd/gravtastic
 gem 'gravtastic'
 
+gem 'omniauth-facebook'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
