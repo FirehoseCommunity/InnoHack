@@ -1,5 +1,5 @@
 <% content_for :head do %>
-  <%= tag :meta, property: "fb:app_id", content: ENV["236887843371819"] %>
+  <%= tag :meta, property: "fb:app_id", content: ENV['FACEBOOK_APP_ID'] %>
   <%= tag :meta, property: "og:site_name", content: "InnoHack" %>
   <%= tag :meta, property: "og:type", content: "innohack:share" %>
   <%= tag :meta, property: "og:title", content: @share.title %>
