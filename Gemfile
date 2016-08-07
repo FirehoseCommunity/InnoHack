@@ -34,11 +34,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'bootstrap-sass'
-
 gem 'simple_form'
 gem 'devise'
-
 gem 'socialization'
+
+gem "nokogiri"
+gem "htmlentities"
 
 # Adding gravatar support https://github.com/chrislloyd/gravtastic
 gem 'gravtastic'
@@ -67,3 +68,4 @@ end
 gem 'simple_hashtag'
 
 gem 'redcarpet'
+gem 'truncate_html'
