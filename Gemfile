@@ -34,11 +34,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'bootstrap-sass'
-
 gem 'simple_form'
 gem 'devise'
-
 gem 'socialization'
+
+gem "nokogiri"
+gem "htmlentities"
 
 # Adding gravatar support https://github.com/chrislloyd/gravtastic
 gem 'gravtastic'
@@ -51,10 +52,7 @@ group :development, :test do
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
@@ -70,3 +68,4 @@ end
 gem 'simple_hashtag'
 
 gem 'redcarpet'
+gem 'truncate_html'
