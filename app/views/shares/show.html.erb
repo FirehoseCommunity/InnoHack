@@ -30,9 +30,12 @@
       <blockquote>
         <%= comment.body %>
         <small><%= comment.user.email %></small>
-        <% if current_user == comment.user %>
+        <% if comment_owner?(comment) %>
           <div class="btn btn-danger pull-right">
             <%= link_to 'Delete', share_comment_path(@share, comment), method: :delete, data: {confirm: 'Are you sure?'} %>
+          </div>
+          <div class="btn btn-warning pull-right">
+            <%= link_to 'Edit', edit_share_comment_path(@share, comment) %>
           </div>
         <% end %>
       </blockquote>

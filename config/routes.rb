@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       post 'upvote'
     end
 
-    resources :comments, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy, :edit, :update]
   end
 
   resources :users, only: [:show]

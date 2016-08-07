@@ -5,7 +5,7 @@
   <div class="booyah-box post">
     <div class="handle">
       <h4><%= link_to share.title, share_path(share) %></h4>
-      <p><%= linkify_hashtags(share.body) %></p>
+      <p><%= linkify_hashtags(truncate(share.body, length: 100, separator: ' ')) %></p>
       <small><%= share.user.name  %></small>
       <p><%= pluralize(share.votes.count, "votes") %></p>
     </div>
