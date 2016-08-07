@@ -3,7 +3,7 @@ class SharesController < ApplicationController
   before_action :set_share, only: [:show, :edit, :update, :destroy, :upvote]
 
   def index
-   @shares = Share.all
+   @shares = Share.newest
   end
 
   def new
