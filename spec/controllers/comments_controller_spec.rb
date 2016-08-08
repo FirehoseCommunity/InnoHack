@@ -38,7 +38,7 @@ RSpec.describe CommentsController, type: :controller do
       user = FactoryGirl.create(:user)
       sign_in user
       get :edit, id: comment.id, share_id: comment.share.id
-      expect(response).to have_http_status(:forbidden)
+      expect(response).to redirect_to root_path
     end
 
     it "should not let unauthenticated users edit a comment" do
@@ -61,7 +61,7 @@ RSpec.describe CommentsController, type: :controller do
       user = FactoryGirl.create(:user)
       sign_in user
       patch :update, id: comment.id, share_id: comment.share.id, comment: {body: "Updated"}
-      expect(response).to have_http_status(:forbidden)
+      expect(response).to redirect_to root_path
     end
 
     it "should not let unauthenticated users edit a comment" do
