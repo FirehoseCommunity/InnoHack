@@ -64,11 +64,11 @@ class SharesController < ApplicationController
   end
 
   def set_share
-    @share = Share.find(params[:id])
+    @share = Share.find_by_id(params[:id])
   end
 
   def require_creator
-    access_denied unless user_signed_in? and (current_user == @share.user)
+    access_denied unless user_signed_in? && (current_user == @share.user)
   end
 
 end
