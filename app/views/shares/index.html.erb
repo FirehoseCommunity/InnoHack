@@ -14,7 +14,17 @@
     </div>
 
     <br />
+    <br />
+    
+    <% share.comments.first(3).each do |comment| %>
+      <blockquote>
+      	<%= comment.body %><br />
+        <small><%= comment.user.email %></small>
+      </blockquote>
+   	<% end %>
 
+	<br />
+	
     <% if share_owner?(share) %>
       <div>
         <div class="btn btn-danger">
