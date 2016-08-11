@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
   gravtastic
 
   has_many :shares
+  has_many :comments
 end
