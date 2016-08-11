@@ -3,20 +3,39 @@
 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
   <% @shares.each do |share| %>
   <div class="booyah-box post">
-    <div class="handle"><%= current_user.name %></div>
-    <%= link_to share.title, share_path(share) %>
-    <p>
-      <%= linkify_hashtags(markdown(share.body)) %>
-    </p>
-    <%= pluralize(share.votes.count, "votes") %>
+    <div class="handle">
+      <h4><%= link_to share.title, share_path(share) %></h4>
+      <p>
+        <%= linkify_hashtags(truncate_html(markdown(share.body), length: 100)) %>
+      </p>
+
+      <small><%= share.user.name  %></small>
+      <p><%= pluralize(share.votes.count, "votes") %></p>
+    </div>
+
     <br />
     <br />
+    
     <% share.comments.first(3).each do |comment| %>
       <blockquote>
       	<%= comment.body %><br />
         <small><%= comment.user.email %></small>
       </blockquote>
    	<% end %>
+
+	<br />
+	
+    <% if share_owner?(share) %>
+      <div>
+        <div class="btn btn-danger">
+          <%= link_to 'Delete', share_path(share), method: :delete, data: {confirm: 'Are you sure?'} %>
+        </div>
+        <div class="btn btn-warning">
+          <%= link_to 'Edit', edit_share_path(share) %>
+        </div>
+      </div>
+    <% end %>
+>>>>>>> master
    </div>
   <% end %>
 </div>

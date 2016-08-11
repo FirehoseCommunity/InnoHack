@@ -1,4 +1,12 @@
 module ApplicationHelper
+  def share_owner?(share)
+    current_user == share.user
+  end
+
+  def comment_owner?(comment)
+    current_user == comment.user
+  end
+
 	def markdown(text)
     render_options = {
         filter_html: true,
@@ -16,7 +24,7 @@ module ApplicationHelper
         strikethrough:      true,
         tables: 						true,
         disable_indented_code_blocks: true,
-        space_after_headers: true, 
+        space_after_headers: true,
         superscript:        true
     }
     markdown = Redcarpet::Markdown.new(renderer, extensions).render(text).html_safe
