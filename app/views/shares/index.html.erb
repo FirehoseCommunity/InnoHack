@@ -9,7 +9,14 @@
       <%= linkify_hashtags(markdown(share.body)) %>
     </p>
     <%= pluralize(share.votes.count, "votes") %>
-    
+    <br />
+    <br />
+    <% share.comments.first(3).each do |comment| %>
+      <blockquote>
+      	<%= comment.body %><br />
+        <small><%= comment.user.email %></small>
+      </blockquote>
+   	<% end %>
    </div>
   <% end %>
 </div>
