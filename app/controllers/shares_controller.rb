@@ -1,13 +1,18 @@
 class SharesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 	
-  def index
-   @shares = Share.newest
+  def new
+    @share = Share.new
   end
 
-  def new
+  def index
+   @shares = Share.newest
    @share = Share.new
+   gon.share_title = @shares.to_json
+
   end
+
+
 
   def create
    @share = current_user.shares.create(share_params)
@@ -22,6 +27,7 @@ class SharesController < ApplicationController
    @share = Share.find_by_id(params[:id])
    return render_not_found if @share.blank?
    @comment = Comment.new
+
   end
 
   def edit

@@ -39,6 +39,7 @@ gem 'simple_form'
 gem 'devise'
 
 gem 'socialization'
+gem 'gon'
 
 # Adding gravatar support https://github.com/chrislloyd/gravtastic
 gem 'gravtastic'
