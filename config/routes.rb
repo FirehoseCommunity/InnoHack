@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root 'static_pages#index'
 
   get 'about', to: 'static_pages#about'
+  get 'skins', to: 'static_pages#skins'
 
   resources :shares do
     member do

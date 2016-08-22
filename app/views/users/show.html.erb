@@ -8,12 +8,14 @@
 	</div>
 </div>
 
+
 <div class="container-fluid">
 	<div class="col-sm-10 dashboardr">
 		<h1>User Shares</h1>
 		<% @user.shares.each do |share| %>
 			<h2><%= link_to share.title, share_path(share) %></h2>
 		<% end %>
+		<%= link_to 'Update Background', skins_path %>
 	</div>
 </div>
 
