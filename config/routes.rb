@@ -17,11 +17,10 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy, :edit, :update]
   end
 
-  resources :users do
-    member do
-      post :follow
-    end
-  end
+resources :users do
+  get 'follow',   to: 'users#follow'
+  post 'unfollow', to: 'users#unfollow'
+end
 
   resources :users, only: [:show]
 

@@ -10,4 +10,9 @@ class User < ActiveRecord::Base
 
   has_many :shares
   has_many :comments
+  
+  acts_as_follower
+  acts_as_followable
+  acts_as_mentionable
+
 end
