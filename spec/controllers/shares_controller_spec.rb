@@ -152,8 +152,8 @@ RSpec.describe SharesController, type: :controller do
    end
    
    it "should allow an admin to destroy shares" do
-    share = FactoryGirl.create(:share)
-    admin = User.where("admin = true")
+    admin = User.new(admin: true)
+    share = admin.create(:share)
     sign_in admin
     delete :destroy, id: share.id
     expect(response).to redirect_to shares_path
