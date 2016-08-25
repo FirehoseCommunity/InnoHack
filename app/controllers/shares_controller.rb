@@ -45,7 +45,7 @@ class SharesController < ApplicationController
 
   def destroy
    return render_not_found if @share.blank?
-   return render_not_found(:forbidden) if @share.user != current_user || current_user.admin != true
+   return render_not_found(:forbidden) if @share.user != current_user && current_user.admin != true
    @share.destroy
    flash[:notice] = "Your code share was destroyed."
    redirect_to shares_path
