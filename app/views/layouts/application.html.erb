@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>InnoHack</title>
+  <%= include_gon(:init => true) %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>

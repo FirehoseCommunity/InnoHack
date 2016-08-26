@@ -37,6 +37,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'socialization'
+gem 'gon'
 
 gem "nokogiri"
 gem "htmlentities"
