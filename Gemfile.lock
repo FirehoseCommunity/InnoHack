@@ -126,6 +126,10 @@ GEM
     orm_adapter (0.5.0)
     pg (0.18.4)
     pkg-config (1.1.7)
+    rabl-rails (0.4.3)
+      activesupport (>= 3.1)
+      railties (>= 3.1)
+      thread_safe (~> 0.3.1)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -238,6 +242,7 @@ DEPENDENCIES
   nokogiri
   omniauth-facebook
   pg (~> 0.15)
+  rabl-rails
   rails (= 4.2.5)
   redcarpet
   rspec-rails (~> 3.0)

@@ -2,16 +2,14 @@ class SharesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_share, only: [:show, :edit, :update, :destroy, :upvote]
 	
+  def index
+    @shares = Share.newest
+    gon.shares = Share.all
+  end
+
   def new
     @share = Share.new
   end 
-
-  def index
-   @shares = Share.newest
-   @share = Share.new
-   gon.share_title = @shares.to_json
-
-  end
 
 
 
@@ -66,7 +64,7 @@ class SharesController < ApplicationController
   private
 
   def share_params
-    params.require(:share).permit(:body, :title)
+    params.require(:share).permit(:body, :title, :lat, :lon)
   end
 
   def set_share

@@ -44,13 +44,20 @@
   margin-top: 25px;
 }
 
-.navbar-default  .container-fluid {
-  background-image:url(cheap_diagonal_fabric.png); 
+.navbar {
+  z-index: +10;
+  margin-bottom: 0px !important;
 }
 
-.earth_div {
-  height: 200px;
-    width: 50%;
-    background-color: powderblue;
+.navbar-default  .container-fluid {
+  background-image:url(cheap_diagonal_fabric.png);
+}
+
+html, body {
+  padding: 0; margin: 0;
+}
+
+#earth_div {
+  top: 0px; right: 20px; bottom: 50px; left: 20px; position: relative !important;
 }
 

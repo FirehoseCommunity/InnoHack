@@ -3,5 +3,25 @@
 <%= simple_form_for @share do |f| %>
   <%= f.input :title %>
   <%= f.input :body %>
+  <%= f.hidden_field :lat, :value => "" %>
+  <%= f.hidden_field :lon, :value => "" %>
   <%= f.submit "Share!" %>
 <% end %>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <script>
+      function initialize() {
+          $.get( "http://geoip.nekudo.com/api/", function( data ) {
+            var lat = data.location.latitude;
+            var lon = data.location.longitude;
+            var latLon = [lat, lon];
+            var city = [data.city];
+              $(document).ready(function() {
+                $('#share_lat').val(lat);
+                $('#share_lon').val(lon);
+              }); 
+            });
+          };
+    </script>
+
