@@ -15,14 +15,16 @@
   <p><%= linkify_hashtags(markdown(@share.body)) %></p><br />
   <%= pluralize(@share.votes.count, "votes") %>
   <%= button_to '+1', upvote_share_path(@share), method: :post %><br />
-
-  <% if share_owner?(@share) %>
-    <div class="btn btn-danger pull-right">
-      <%= link_to 'Delete', share_path(@share), method: :delete, data: {confirm: 'Are you sure?'} %>
-    </div>
-    <div class="btn btn-warning pull-right">
-      <%= link_to 'Edit', edit_share_path(@share) %>
-    </div>
+  
+  <% if user_signed_in? %>
+	  <% if share_owner?(@share) || current_user.admin == true %>
+	    <div class="btn btn-danger pull-right">
+	      <%= link_to 'Delete', share_path(@share), method: :delete, data: {confirm: 'Are you sure?'} %>
+	    </div>
+	    <div class="btn btn-warning pull-right">
+	      <%= link_to 'Edit', edit_share_path(@share) %>
+	    </div>
+	  <% end %>
   <% end %>
 
   <div class="clear"></div>
