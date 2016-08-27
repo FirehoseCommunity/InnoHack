@@ -44,7 +44,25 @@
   margin-top: 25px;
 }
 
-.navbar-default  .container-fluid {
+.nav_img .container-fluid {
   background-image:url(cheap_diagonal_fabric.png); 
 }
 
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+}
+
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+
+.skin1  .container-fluid {
+  background-image:url(Skin1.png);
+  background-size: 80px 60px;
+  
+}
+
+.skin2  .container-fluid {
+  background-image:url(Skin2.png);
+  background-size: 80px 60px; 
+}
