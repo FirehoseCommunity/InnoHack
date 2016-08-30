@@ -69,3 +69,4 @@ gem 'simple_hashtag'
 
 gem 'redcarpet'
 gem 'truncate_html'
+gem 'jquery-turbolinks'
