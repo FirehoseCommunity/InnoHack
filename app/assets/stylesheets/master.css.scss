@@ -46,11 +46,16 @@
 
 .navbar {
   z-index: +10;
-  margin-bottom: 0px !important;
+}
+
+nav.navbar.navbar-default {
+  margin-bottom: 0px;
+  
 }
 
 .navbar-default  .container-fluid {
   background-image:url(cheap_diagonal_fabric.png);
+  
 }
 
 html, body {

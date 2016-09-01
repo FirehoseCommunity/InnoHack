@@ -10,7 +10,8 @@
   <%= csrf_meta_tags %>
   <%= content_for?(:head) ? yield(:head) : '' %>
 </head>
-<body> 
+<body>
+  
   <%= render 'layouts/navigation' %>
 
   <!-- Added toastr, if you prefer regular errors. You can add the _error partial -->
