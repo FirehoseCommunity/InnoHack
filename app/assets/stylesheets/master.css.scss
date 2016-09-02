@@ -63,6 +63,12 @@ html, body {
 }
 
 #earth_div {
-  top: 0px; right: 20px; bottom: 50px; left: 20px; position: relative !important;
+  top: 0px; right: 0px; bottom: 50px; left: 0px; position: relative;
+}
+
+@media (min-width: 768px ) {
+ .container {
+    width: 100%;
+  }
 }
 
