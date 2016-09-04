@@ -1,39 +1,38 @@
+<script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
+
 <script src="http://www.webglearth.com/v2/api.js"></script>
+
 <script>
-  $.get( "http://geoip.nekudo.com/api/", function( data ) {
-      var shares = gon.shares;
-      var defaultCenter = ([shares[shares.length-1].lat, shares[shares.length-1].lon]);
-      var options = {
-      center: defaultCenter,
+$(function() {
+  var shares = gon.shares;
+  var options = {
+      center: [shares[shares.length-1].lat, shares[shares.length-1].lon],
       sky: false,
       atmosphere: false,
-      zoom: 2,
+      zoom: 3,
       tilting: true,
       dragging: true,
-    };
+  };
 
-    earth = new WE.map('earth_div', options);
+  earth = new WE.map('earth_div', options);
 
-    WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(earth);
+  WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(earth);
 
-    for (var i=0; i<shares.length; ++i) {
-      var share = shares[i];
-      var title = share.title;
-      var body = share.body;
-      var trimmedBody = body.substring(0, 25);
-      var trimmedBody2 = body.substring(25, 100);
-      var lat = share.lat;
-      var lon = share.lon;
-      var latLon = [lat, lon];
-      var marker = WE.marker(latLon).addTo(earth);
-      marker.bindPopup("<b>" + title + "</b><br>" + trimmedBody + "<br /><span style='font-size:10px;color:#999'>" + trimmedBody2 + "...</span>");
-    };
+  var myFirebaseRef = new Firebase("https://innohack-7bb17.firebaseio.com");
+  myFirebaseRef.child("shares").on("child_added", function(snapshot) {
+    var lat = snapshot.val().lat;
+    var lon = snapshot.val().lon;
+    var latLon = [lat, lon];
+    var title = snapshot.val().title;
+    var body = snapshot.val().body;
+    var trimmedBody = body.substring(0, 25);
+    var trimmedBody2 = body.substring(25, 100);
+    var marker = WE.marker(latLon).addTo(earth);
+    marker.bindPopup("<b>" + title + "</b><br>" + trimmedBody + "<br /><span style='font-size:10px;color:#999'>" + trimmedBody2 + "...</span>");
   });
-</script>
+});
 
-<div class="row">
-  <div id="earth_div"></div> 
-</div>
+</script>
 
 <div class="row">
   <div class="col-xs-12">
@@ -41,6 +40,12 @@
     <br />
   </div>
 </div>
+
+<div class="row">
+  <div id="earth_div"></div> 
+</div>
+
+
 
 <div class="row">
   <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
