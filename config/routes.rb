@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root 'static_pages#index'
 
   get 'about', to: 'static_pages#about'
+  
 
   resources :shares do
     member do
@@ -17,12 +18,9 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy, :edit, :update]
   end
 
-  resources :users do
+  resources :users, only: [:show, :update] do
     member do
       post :follow
     end
   end
-
-  resources :users, only: [:show]
-
 end
