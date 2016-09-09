@@ -14,11 +14,13 @@ class Share < ActiveRecord::Base
   private
 
   def push_to_firebase
-    response = FIREBASE.push("shares", {
-      :title => self.title,
-      :body => self.body,
-      :lat => self.lat,
-      :lon => self.lon 
-    })
+    if ! Rails.env.test?
+      response = FIREBASE.push("shares", {
+        :title => self.title,
+        :body => self.body,
+        :lat => self.lat,
+        :lon => self.lon 
+      })
+    end
   end
 end
