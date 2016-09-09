@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20160825211645) do
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float    "lat"
+    t.float    "lon"
   end
 
   create_table "simple_hashtag_hashtaggings", force: :cascade do |t|

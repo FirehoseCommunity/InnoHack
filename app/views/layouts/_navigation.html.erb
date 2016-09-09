@@ -14,8 +14,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'All Shares', shares_path %></li>
-        <li><%= link_to 'New Share', new_share_path %></li>
+        <li><%= link_to 'All Shares', shares_path, 'data-no-turbolink' => true%></li>
+        <li><%= link_to 'New Share', new_share_path, 'data-no-turbolink' => true%></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>

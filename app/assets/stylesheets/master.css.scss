@@ -44,7 +44,31 @@
   margin-top: 25px;
 }
 
+.navbar {
+  z-index: +10;
+}
+
+nav.navbar.navbar-default {
+  margin-bottom: 0px;
+  
+}
+
 .navbar-default  .container-fluid {
-  background-image:url(cheap_diagonal_fabric.png); 
+  background-image:url(cheap_diagonal_fabric.png);
+  
+}
+
+html, body {
+  padding: 0; margin: 0;
+}
+
+#earth_div {
+  top: 0px; right: 0px; bottom: 50px; left: 0px; position: relative;
+}
+
+@media (min-width: 768px ) {
+ .container {
+    width: 100%;
+  }
 }
 
