@@ -58,33 +58,11 @@
 .navbar-default .navbar-brand {
   color: #777676;
 
-.navbar {
-  z-index: +10;
-}
-
-nav.navbar.navbar-default {
-  margin-bottom: 0px;
-  
-}
-
-html, body {
-  padding: 0; margin: 0;
-}
-
-#earth_div {
-  top: 0px; right: 0px; bottom: 50px; left: 0px; position: relative;
-}
-
-@media (min-width: 768px ) {
- .container {
-    width: 100%;
-  }
 }
 
 .theme1 .navbar-nav > li > a {
   color: #fff;
 }
-
 
 .theme1 .navbar-brand {
   color: #fff;
@@ -113,3 +91,32 @@ html, body {
 .theme3 .navbar-brand {
   color: #fff;
 }
+
+.gravatar {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.navbar {
+  z-index: +10;
+}
+
+nav.navbar.navbar-default {
+  margin-bottom: 0px;
+  
+}
+
+html, body {
+  padding: 0; margin: 0;
+}
+
+#earth_div {
+  top: 0px; right: 0px; bottom: 50px; left: 0px; position: relative;
+}
+
+@media (min-width: 768px ) {
+ .container {
+    width: 100%;
+  }
+}
+

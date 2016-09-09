@@ -1,5 +1,5 @@
 
-  <div class="col-sm-10">
+  <div class="col-sm-10 gravatar">
   	<%= image_tag current_user.gravatar_url(:size => 80)%>
   	<h4><%= @user.email %></h4>
   </div>
@@ -26,32 +26,26 @@
   <h1>Change Theme</h1>
     
     <div class="row">
-      <div class="col-lg-4 col-sm-6">
+      <div class="col-lg-3 col-sm-6">
         <div class="thumbnail">
-        
           <%= link_to (image_tag 'diagonal_fabric.png', class:'img-responsive default'), {:controller => 'users', :user => current_user, :action => 'update', :theme => 'default'}, method: :put %>
         </div>
       </div>
-      <div class="col-lg-4 col-sm-6">
+      <div class="col-lg-3 col-sm-6">
         <div class="thumbnail">
-        
           <%= link_to (image_tag 'theme_1.png', class:'img-responsive theme1'), {:controller => 'users', :user => current_user, :action => 'update', :theme => 'theme1'}, method: :put %>
         </div>
       </div>
-       <div class="col-lg-4 col-sm-6">
+       <div class="col-lg-3 col-sm-6">
         <div class="thumbnail">
-        
           <%= link_to (image_tag 'theme_2.png', class:'img-responsive theme2'), {:controller => 'users', :user => current_user, :action => 'update', :theme => 'theme2'}, method: :put %>
         </div>
       </div>
-       <div class="col-lg-4 col-sm-6">
+       <div class="col-lg-3 col-sm-6">
         <div class="thumbnail">
-        
           <%= link_to (image_tag 'theme_3.png', class:'img-responsive theme3'), {:controller => 'users', :user => current_user, :action => 'update', :theme => 'theme3'}, method: :put %>
         </div>
       </div>
-     
-
 
     </div>
 </div>
