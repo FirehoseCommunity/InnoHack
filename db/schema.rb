@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20160901013042) do
     t.datetime "updated_at",                          null: false
     t.string   "name"
     t.string   "GitHub"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
