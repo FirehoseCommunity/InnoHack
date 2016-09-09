@@ -4,14 +4,25 @@
 
 <script>
 $(function() {
-  var shares = gon.shares;
-  var options = {
-      center: [shares[shares.length-1].lat, shares[shares.length-1].lon],
+  
+  if (gon.shares.length != 0) {
+    var shares = gon.shares;
+    var options = {
+        center: [shares[shares.length-1].lat, shares[shares.length-1].lon],
+        sky: false,
+        atmosphere: false,
+        zoom: 3,
+        tilting: true,
+        dragging: true,
+    };
+  } else {
+    var options = {
       sky: false,
       atmosphere: false,
       zoom: 3,
       tilting: true,
       dragging: true,
+    };
   };
 
   earth = new WE.map('earth_div', options);
