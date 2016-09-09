@@ -132,10 +132,6 @@ GEM
     pkg-config (1.1.7)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
-    rabl-rails (0.4.3)
-      activesupport (>= 3.1)
-      railties (>= 3.1)
-      thread_safe (~> 0.3.1)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -250,7 +246,6 @@ DEPENDENCIES
   omniauth-facebook
   pg (~> 0.15)
   quiet_assets
-  rabl-rails
   rails (= 4.2.5)
   redcarpet
   rspec-rails (~> 3.0)

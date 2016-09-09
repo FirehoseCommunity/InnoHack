@@ -40,7 +40,6 @@ gem 'simple_form'
 gem 'devise'
 gem 'socialization'
 gem 'gon'
-gem 'rabl-rails'
 
 gem "nokogiri"
 gem "htmlentities"
