@@ -1,3 +1,4 @@
+
 .clear {
   clear:both;
 }
@@ -12,17 +13,6 @@
   margin-top: 10px;
   margin-bottom: 15px;
   padding: 10px; 
-}
-
-.container-fluid {
-}
-
-.dashboard {
-  background: gray;
-}
-
-.dashboardr {
-  background: #bebebd;
 }
 
 
@@ -44,7 +34,59 @@
   margin-top: 25px;
 }
 
-.navbar-default  .container-fluid {
-  background-image:url(cheap_diagonal_fabric.png); 
+.navbar-default  {
+  background-image:url(diagonal_fabric.png); 
 }
 
+.theme1 {
+  background-image:url(theme_1.png);
+}
+
+.theme2 {
+  background-image:url(theme_2.png);
+}
+
+.theme3 {
+  background-image:url(theme_3.png);
+}
+
+
+.navbar-default .navbar-nav > li > a {
+  color: #777676;
+}
+
+.navbar-default .navbar-brand {
+  color: #777676;
+}
+
+.theme1 .navbar-nav > li > a {
+  color: #fff;
+}
+
+
+.theme1 .navbar-brand {
+  color: #fff;
+}
+
+.theme1, .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #fff;  
+}
+.theme1, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #fff;  
+}
+
+.theme2 .navbar-nav > li > a {
+  color: #fff;
+}
+
+.theme2 .navbar-brand {
+  color: #fff;
+}
+
+.theme3 .navbar-nav > li > a {
+  color: #fff;
+}
+
+.theme3 .navbar-brand {
+  color: #fff;
+}

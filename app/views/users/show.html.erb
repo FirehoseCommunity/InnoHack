@@ -1,53 +1,53 @@
-<div class="container-fluid dashboard col-sm-2">
-	<%= image_tag current_user.gravatar_url(:size => 120) %>
-	<br />
 
-	<div class="col-sm-3">
-	<br />
-		<%= @user.email %>
-	</div>
-</div>
+  <div class="col-sm-10">
+  	<%= image_tag current_user.gravatar_url(:size => 80)%>
+  	<h4><%= @user.email %></h4>
+  </div>
 
-<div class="container-fluid">
-	<div class="col-sm-10 dashboardr">
+	<div class="booyah-box col-xs-10 col-xs-offset-1">
 		<h1>User Shares</h1>
 		<% @user.shares.each do |share| %>
 			<h2><%= link_to share.title, share_path(share) %></h2>
 		<% end %>
 	</div>
-</div>
 
 
-<div class="container-fluid">
-	<div class="col-sm-10 dashboardr">
+	<div class="booyah-box col-xs-10 col-xs-offset-1">
 		<h1>User Comments</h1>
 		<% @user.comments.each do |comment| %>
 			Comment: <%= comment.body %><br />
 			Left on this share: <%= link_to comment.share.title, share_path(comment.share) %><br /><br />
 		<% end %>
 	</div>
-</div>
+
+
 
 <div class ="booyah-box col-xs-10 col-xs-offset-1">
-  <h2>Change Theme</h2>
+  <h1>Change Theme</h1>
     
     <div class="row">
       <div class="col-lg-4 col-sm-6">
         <div class="thumbnail">
         
-          <%= link_to (image_tag 'theme_1.png', class:'img-responsive'), {:controller => 'users', :user => current_user, :action => 'update', :theme => 'theme1'}, method: :put %>
+          <%= link_to (image_tag 'diagonal_fabric.png', class:'img-responsive default'), {:controller => 'users', :user => current_user, :action => 'update', :theme => 'default'}, method: :put %>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="thumbnail">
+        
+          <%= link_to (image_tag 'theme_1.png', class:'img-responsive theme1'), {:controller => 'users', :user => current_user, :action => 'update', :theme => 'theme1'}, method: :put %>
         </div>
       </div>
        <div class="col-lg-4 col-sm-6">
         <div class="thumbnail">
         
-          <%= link_to (image_tag 'theme_2.png', class:'img-responsive'), {:controller => 'users', :user => current_user, :action => 'update', :theme => 'theme2'}, method: :put %>
+          <%= link_to (image_tag 'theme_2.png', class:'img-responsive theme2'), {:controller => 'users', :user => current_user, :action => 'update', :theme => 'theme2'}, method: :put %>
         </div>
       </div>
        <div class="col-lg-4 col-sm-6">
         <div class="thumbnail">
         
-          <%= link_to (image_tag 'theme_3.png', class:'img-responsive'), {:controller => 'users', :user => current_user, :action => 'update', :theme => 'theme3'}, method: :put %>
+          <%= link_to (image_tag 'theme_3.png', class:'img-responsive theme3'), {:controller => 'users', :user => current_user, :action => 'update', :theme => 'theme3'}, method: :put %>
         </div>
       </div>
      

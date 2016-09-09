@@ -11,9 +11,4 @@ class User < ActiveRecord::Base
   has_many :shares
   has_many :comments
 
-  THEMES = {
-    'theme 1' => '/images/theme_1.png',
-    'theme 2' => '/images/theme_2.png',
-    'theme 3' => '/images/theme_3.png'
-  }
 end
