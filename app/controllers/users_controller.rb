@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     flash[:notice] = "Your theme was updated."
     redirect_to user_path
    else
-    return render :edit, status: :unprocessable_entity
+    return render_not_found
    end
 
   end
