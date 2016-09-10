@@ -1,5 +1,7 @@
-<nav class="navbar navbar-default">
+
+  <nav class="navbar navbar-default <%= current_user.try(:theme) %>">  
   <div class="container-fluid">
+
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -14,6 +16,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li><%= link_to 'About', about_path %></li>
         <li><%= link_to 'All Shares', shares_path, 'data-no-turbolink' => true%></li>
         <li><%= link_to 'New Share', new_share_path, 'data-no-turbolink' => true%></li>
       </ul>
